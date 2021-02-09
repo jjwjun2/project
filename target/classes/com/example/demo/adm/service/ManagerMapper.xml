@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.adm.service.ManagerMapper">
+
+
+
+	<insert id="register"
+		parameterType="com.example.demo.adm.service.Manager">
+		insert into managers(userid, number, password, prdName)
+		values(#{userid}, #{number}, #{password}, #{prdName})
+	</insert>
+
+
+	<delete id="delete"
+		parameterType="com.example.demo.adm.service.Manager">
+		delete from managers 
+		where userid like ${userid} 
+	</delete>
+
+
+
+	<update id="updateManager"
+		parameterType="com.example.demo.adm.service.Manager">
+		update managers
+		set (#{userid}, #{number}, #{password}, #{prdName})
+		where userid like ${value}
+	</update>
+
+
+	<select id="selectUserById" parameterType="string"
+		resultType="com.example.demo.adm.service.Manager">
+		select userid, number, password, prdName
+		from managers
+		where userid like ${value}
+	</select>
+
+
+	<select id="selectAll"
+		parameterType="com.example.demo.adm.service.Manager"
+		resultType="com.example.demo.adm.service.Manager">
+		select userid, number, password, prdName
+		from managers
+	</select>
+
+
+	<select id="login"
+		parameterType="com.example.demo.adm.service.Manager"
+		resultType="com.example.demo.adm.service.Manager">
+		select userid, password
+		from managers
+		where userid like #{userid} and password like #{password}
+	</select>
+</mapper>

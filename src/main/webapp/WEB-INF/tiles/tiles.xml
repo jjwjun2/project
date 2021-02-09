@@ -1,0 +1,27 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="index" template="/WEB-INF/views/move.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/head.jsp"/>
+		<put-attribute name="container" value=""/>
+	</definition>
+	
+	
+	<definition name="manage:*" extends="index">
+		<put-attribute name="container"
+			value="/WEB-INF/views/manage/{1}.jsp"/>
+	</definition>
+	
+	<definition name="manage:*/*" extends="index">
+		<put-attribute name="container"
+			value="/WEB-INF/views/manage/{1}/{2}.jsp"/>
+	</definition>
+	
+	<definition name="manage:*/*/*" extends="index">
+		<put-attribute name="container"
+			value="/WEB-INF/views/manage/{1}/{2}/{3}.jsp"/>
+	</definition>
+
+</tiles-definitions>
