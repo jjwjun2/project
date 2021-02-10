@@ -13,7 +13,7 @@ lst.lst = (x) => {
 					<div class="img"><img src="${j.placeImg}"/></div>
 					<div class="txt"><strong>${j.name}</strong></div>
 				</a>
-			</li>`)
+					</li>`)
 					.appendTo('#ul')
 			})
 			$('#main #list ul li a').each(function(){
