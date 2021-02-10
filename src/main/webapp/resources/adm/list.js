@@ -16,7 +16,7 @@ lst.lst = (x) => {
 			</li>`)
 					.appendTo('#ul')
 			})
-			$('#main #list ul li a').each(function() {
+			$('#main #list ul li a').each(function(){
 				$(this).click(e => {
 					localStorage.setItem('pceNum', this.id)
 					location.href = `/gwland/pce/detailPlace`

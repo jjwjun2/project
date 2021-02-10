@@ -30,6 +30,14 @@
 
 <script>
 	$(`#home`).click(function() {location.href = `${c}`})
+	$(`#b`).click(function(e){
+		e.preventDefault()
+		move(`${c}`)
+	})
+	
+	function move(c){
+		location.href=c+'/managers'
+	}
 	
 </script>
 
