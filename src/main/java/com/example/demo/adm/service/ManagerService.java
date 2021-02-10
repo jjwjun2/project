@@ -36,12 +36,12 @@ public class ManagerService {
 	}
 
 	public List<Manager> selectAll() {
-
 		return managerMapper.selectAll();
 	}
 
 	public List<Manager> selectAllByName() {
-		return managerMapper.selectAll().stream().filter(Manager->Manager.getPrdName()
-				.equals("A")).collect(Collectors.toList());
+		return managerMapper.selectAll().stream().
+				filter(Manager -> Manager.getPrdName().equals("A"))
+				.collect(Collectors.toList());
 	}
 }

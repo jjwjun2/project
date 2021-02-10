@@ -54,11 +54,13 @@ public class ManagerController {
 		return managerMapper.selectUserById(id);
 	}
 	
+	
 	@DeleteMapping("/manage2")
 	public void delete(@PathVariable Manager manager) {
 		System.out.println("Manager delete check!");
 		managerMapper.delete(manager);
 	}
+	
 	
 	@GetMapping("/select")
 	public Map<?, ?> selectAll() {

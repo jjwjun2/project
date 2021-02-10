@@ -8,15 +8,14 @@ regi.regi = x => {
 		data: JSON.stringify({
 
 			userid: document.getElementById('userid').value,
-			password: document.getElementById('password').value,
-			number: 1,
+
 			
 		}),
 		dataType: 'json',
 		contentType: 'application/json',
 		success: d => {
 			if (d.message === "SUCCESS") {
-				alert(`Register`)
+				alert(`Delete`)
 			} else {
 				alert(`Failure`)
 			}
